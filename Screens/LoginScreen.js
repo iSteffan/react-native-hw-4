@@ -25,7 +25,7 @@ export default function RegistrationScreen() {
 
   const [isEmailFocused, setIsEmailFocused] = useState(false);
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
-  const [isPasswordHidden, setIsPasswordHidden] = useState(false);
+  const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
   const keyboardHide = () => {
     setIsKeyboardVisible(false);
@@ -47,7 +47,7 @@ export default function RegistrationScreen() {
             <View style={styles.formWrap}>
               <Text style={styles.title}>Увійти</Text>
 
-              <View style={styles.inputWraper}>
+              <View style={styles.inputWrapper}>
                 <TextInput
                   value={state.email}
                   onChangeText={value => setState(prevState => ({ ...prevState, email: value }))}
@@ -84,7 +84,7 @@ export default function RegistrationScreen() {
                     }}
                     onFocus={() => {
                       setIsKeyboardVisible(true);
-                      setIsPasswordFocus(true);
+                      setIsPasswordFocused(true);
                     }}
                     onBlur={() => setIsPasswordFocused(false)}
                   />
@@ -99,7 +99,7 @@ export default function RegistrationScreen() {
                 </View>
               </View>
 
-              {!isShowKeyboard && (
+              {!isKeyboardVisible && (
                 <View>
                   <Pressable onPress={handleSubmit} style={styles.button}>
                     <Text style={styles.buttonText}>Увійти</Text>

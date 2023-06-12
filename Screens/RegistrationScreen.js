@@ -26,7 +26,7 @@ export default function RegistrationScreen() {
   const [isLoginFocused, setIsLoginFocused] = useState(false);
   const [isEmailFocused, setIsEmailFocused] = useState(false);
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
-  const [isPasswordHidden, setIsPasswordHidden] = useState(false);
+  const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
   const keyboardHide = () => {
     setIsKeyboardVisible(false);

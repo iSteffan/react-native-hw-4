@@ -19,6 +19,8 @@ export default function Home({ navigation }) {
           justifyContent: 'center',
           alignItems: 'center',
           height: 83,
+          borderTopWidth: 1,
+          borderTopColor: '#BDBDBD',
         },
         headerTitleStyle: styles.headerTitle,
       }}

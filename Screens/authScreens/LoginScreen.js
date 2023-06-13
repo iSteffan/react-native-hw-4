@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CardStyleInterpolators } from '@react-navigation/stack';
 import {
   StyleSheet,
   View,
@@ -18,7 +19,7 @@ const initialState = {
   password: '',
 };
 
-export default function RegistrationScreen() {
+export default function LoginScreen({ navigation }) {
   const [state, setState] = useState(initialState);
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
 
@@ -36,6 +37,7 @@ export default function RegistrationScreen() {
     console.log(state);
     setState(initialState);
     checkTextInput();
+    navigation.navigate('Home');
   };
 
   const validateEmail = str => {
@@ -66,7 +68,7 @@ export default function RegistrationScreen() {
       <View>
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' && 'padding'}>
           <View style={styles.container}>
-            <Image source={require('../assets/images/photo-bg.jpg')} style={styles.image} />
+            <Image source={require('../../assets/images/photo-bg.jpg')} style={styles.image} />
             <View style={styles.formWrap}>
               <Text style={styles.title}>Увійти</Text>
 
@@ -127,7 +129,16 @@ export default function RegistrationScreen() {
                   <Pressable onPress={handleSubmit} style={styles.button}>
                     <Text style={styles.buttonText}>Увійти</Text>
                   </Pressable>
-                  <Text style={styles.logInText}>Немає акаунту? Зареєструватися</Text>
+                  <Pressable
+                    onPress={() => {
+                      navigation.navigate('Register');
+                    }}
+                    style={{
+                      marginBottom: 100,
+                    }}
+                  >
+                    <Text style={styles.logInText}>Немає акаунту? Зареєструватися</Text>
+                  </Pressable>
                 </View>
               )}
             </View>

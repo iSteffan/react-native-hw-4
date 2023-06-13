@@ -10,6 +10,7 @@ import {
   Text,
   Pressable,
   Image,
+  Alert,
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
@@ -37,6 +38,34 @@ export default function RegistrationScreen() {
     keyboardHide();
     console.log(state);
     setState(initialState);
+    checkTextInput();
+  };
+
+  const validateEmail = str => {
+    const emailRegex =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailRegex.test(str);
+  };
+
+  const checkTextInput = () => {
+    const { login, email, password } = state;
+
+    if (!login.trim()) {
+      Alert.alert('Warning', 'Login is required. Please write your login');
+      return;
+    }
+    if (!email.trim()) {
+      Alert.alert('Warning', 'Email is required. Please write your email');
+      return;
+    }
+    if (!validateEmail(email)) {
+      Alert.alert('Warning', 'Please write valid email');
+      return;
+    }
+    if (!password.trim()) {
+      Alert.alert('Warning', 'Password is required. Please write password');
+      return;
+    }
   };
 
   return (
@@ -58,6 +87,7 @@ export default function RegistrationScreen() {
                   value={state.login}
                   onChangeText={value => setState(prevState => ({ ...prevState, login: value }))}
                   placeholder="Логін"
+                  autoComplete="username"
                   placeholderTextColor={'#BDBDBD'}
                   style={{
                     ...styles.input,
@@ -75,6 +105,7 @@ export default function RegistrationScreen() {
                   value={state.email}
                   onChangeText={value => setState(prevState => ({ ...prevState, email: value }))}
                   placeholder="Адреса електронної пошти"
+                  autoComplete="email"
                   placeholderTextColor={'#BDBDBD'}
                   style={{
                     ...styles.input,

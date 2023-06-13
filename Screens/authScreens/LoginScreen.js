@@ -133,9 +133,6 @@ export default function LoginScreen({ navigation }) {
                     onPress={() => {
                       navigation.navigate('Register');
                     }}
-                    style={{
-                      marginBottom: 100,
-                    }}
                   >
                     <Text style={styles.logInText}>Немає акаунту? Зареєструватися</Text>
                   </Pressable>

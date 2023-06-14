@@ -30,7 +30,7 @@ export default function CreatePostsScreen() {
     <View style={styles.container}>
       <TouchableWithoutFeedback onPress={keyboardHide}>
         <View>
-          <KeyboardAvoidingView behavior={Platform.OS === 'android' && 'padding'}>
+          <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             {!isShowKeyboard && (
               <View>
                 <View style={styles.imageBackground}>

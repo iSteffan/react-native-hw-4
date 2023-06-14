@@ -71,7 +71,7 @@ export default function LoginScreen({ navigation }) {
   return (
     <TouchableWithoutFeedback onPress={keyboardHide}>
       <View>
-        <KeyboardAvoidingView behavior={Platform.OS === 'android' && 'padding'}>
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
           <View style={styles.container}>
             <Image source={require('../../assets/images/photo-bg.jpg')} style={styles.image} />
             <View style={styles.formWrap}>

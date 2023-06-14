@@ -16,8 +16,8 @@ export default function Home({ navigation }) {
         headerStyle: styles.header,
         tabBarShowLabel: false,
         tabBarStyle: {
-          justifyContent: 'center',
-          alignItems: 'center',
+          // justifyContent: 'center',
+          // alignItems: 'center',
           height: 83,
           borderTopWidth: 1,
           borderTopColor: '#BDBDBD',
@@ -28,10 +28,15 @@ export default function Home({ navigation }) {
       <BottomTab.Screen
         options={{
           tabBarIcon: ({ focused, size, color }) => (
-            <Feather name="grid" size={24} color="#212121CC" />
+            <Feather
+              name="grid"
+              size={24}
+              color="#212121CC"
+              style={{ marginBottom: 28, marginLeft: 90 }}
+            />
           ),
           headerRight: () => (
-            <Pressable onPress={() => navigation.navigate('Login')} style={{ marginRight: 16 }}>
+            <Pressable onPress={() => navigation.navigate('Login')} style={{ marginRight: 10 }}>
               <Feather name="log-out" size={24} color="#BDBDBD" />
             </Pressable>
           ),
@@ -59,7 +64,12 @@ export default function Home({ navigation }) {
       <BottomTab.Screen
         options={{
           tabBarIcon: ({ focused, size, color }) => (
-            <Feather name="user" size={24} color="#212121CC" />
+            <Feather
+              name="user"
+              size={24}
+              color="#212121CC"
+              style={{ marginBottom: 28, marginRight: 90 }}
+            />
           ),
           headerShown: false,
         }}
@@ -84,6 +94,8 @@ const styles = StyleSheet.create({
   plusIcon: {
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 28,
+
     backgroundColor: '#FF6C00',
     width: 70,
     height: 40,

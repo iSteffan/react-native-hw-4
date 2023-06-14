@@ -104,29 +104,33 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 16,
-    paddingTop: 28,
+    paddingTop: 32,
+
     backgroundColor: '#fff',
   },
   imageBackground: {
+    justifyContent: 'center',
+    alignItems: 'center',
+
     width: '100%',
-    height: 200,
+    height: 240,
     backgroundColor: '#F6F6F6',
     borderWidth: 1,
     borderColor: '#E8E8E8',
     borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   photoIconWrap: {
+    justifyContent: 'center',
+    alignItems: 'center',
+
     width: 60,
     height: 60,
     backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
     borderRadius: 50,
   },
   text: {
     marginTop: 8,
+
     fontSize: 16,
     fontFamily: 'Roboto-Regular',
     color: '#BDBDBD',
@@ -143,13 +147,14 @@ const styles = StyleSheet.create({
     bottom: 7,
   },
   button: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 32,
+
     width: '100%',
     height: 50,
     backgroundColor: '#F6F6F6',
     borderRadius: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 32,
   },
   buttonText: {
     fontFamily: 'Roboto-Regular',
@@ -157,16 +162,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   trashButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+
     width: 70,
     height: 40,
     backgroundColor: '#F6F6F6',
     borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
     textAlign: 'center',
   },
   trashIconWrap: {
     alignItems: 'center',
-    marginTop: 90,
+    marginTop: 120,
   },
 });

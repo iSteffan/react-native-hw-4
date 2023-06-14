@@ -36,7 +36,10 @@ export default function Home({ navigation }) {
             />
           ),
           headerRight: () => (
-            <Pressable onPress={() => navigation.navigate('Login')} style={{ marginRight: 10 }}>
+            <Pressable
+              onPress={() => navigation.navigate('Login')}
+              style={{ marginRight: 10, marginTop: 10 }}
+            >
               <Feather name="log-out" size={24} color="#BDBDBD" />
             </Pressable>
           ),
@@ -52,7 +55,10 @@ export default function Home({ navigation }) {
             </View>
           ),
           headerLeft: () => (
-            <Pressable onPress={() => navigation.navigate('Публікації')} style={{ marginLeft: 16 }}>
+            <Pressable
+              onPress={() => navigation.navigate('Публікації')}
+              style={{ marginLeft: 16, marginTop: 10 }}
+            >
               <AntDesign name="arrowleft" size={24} color="#212121CC" />
             </Pressable>
           ),
@@ -90,6 +96,7 @@ const styles = StyleSheet.create({
     color: '#212121',
     fontFamily: 'Roboto-Medium',
     fontSize: 17,
+    marginTop: 10,
   },
   plusIcon: {
     alignItems: 'center',

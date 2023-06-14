@@ -1,5 +1,3 @@
-// import { StatusBar } from 'expo-status-bar';
-// import { StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';

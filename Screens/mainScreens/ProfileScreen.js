@@ -24,10 +24,11 @@ export default function ProfileScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 120,
+    paddingTop: 147,
   },
   backgroundImage: {
     position: 'absolute',
+
     width: 411,
     zIndex: -1,
   },
@@ -60,6 +61,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     width: '100%',
     height: '100%',
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
   },
   logOutButton: {
     marginLeft: 'auto',

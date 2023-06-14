@@ -33,11 +33,16 @@ export default function LoginScreen({ navigation }) {
   };
 
   const handleSubmit = () => {
+    const { email, password } = state;
+
     keyboardHide();
     console.log(state);
     setState(initialState);
     checkTextInput();
-    navigation.navigate('Home');
+
+    if (email !== '' && password !== '' && validateEmail(email)) {
+      navigation.navigate('Home');
+    }
   };
 
   const validateEmail = str => {

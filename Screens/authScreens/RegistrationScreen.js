@@ -35,11 +35,16 @@ export default function RegistrationScreen({ navigation }) {
   };
 
   const handleSubmit = () => {
+    const { email, password, login } = state;
+
     keyboardHide();
     console.log(state);
     setState(initialState);
     checkTextInput();
-    navigation.navigate('Home');
+
+    if (email !== '' && password !== '' && login !== '' && validateEmail(email)) {
+      navigation.navigate('Home');
+    }
   };
 
   const validateEmail = str => {
